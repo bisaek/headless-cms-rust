@@ -1,5 +1,5 @@
-use actix_web::{get, post, web, HttpResponse, Responder, Result};
-use serde::Deserialize;
+use actix_web::{post, web, HttpResponse, Responder};
+use serde::{Deserialize, Serialize};
 
 #[derive(Deserialize)]
 pub struct PageInfo {
@@ -11,6 +11,6 @@ pub struct PageInfo {
 #[post("/createPage")]
 pub async fn create_page(info: web::Json<PageInfo>) -> impl Responder {
     // let (name) = path.into_inner();
-    println!("{}", info.title);
+    println!("title: {} \n {} \n\n\n", info.title, info.page);
     HttpResponse::Ok().body("new page")
 }
