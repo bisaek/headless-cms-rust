@@ -22,6 +22,6 @@ struct PageType {
 
 #[post("createPageType")]
 pub async fn create_page_type(page_type: Json<PageType>) -> impl Responder {
-    println!("{}", pageType.fields[3].name);
+    println!("{}", page_type.fields[3].name);
     HttpResponse::Ok().body("new page type")
 }
