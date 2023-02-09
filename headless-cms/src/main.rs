@@ -1,4 +1,5 @@
 mod api;
+mod utils;
 
 use actix_web::{error, get, post, web, App, HttpResponse, HttpServer, Responder};
 
@@ -26,6 +27,7 @@ async fn main() -> std::io::Result<()> {
             .service(echo)
             .route("/hey", web::get().to(manual_hello))
             .service(api::create_page::create_page)
+            .service(api::create_page_type::create_page_type)
             .app_data(web::JsonConfig::default().error_handler(|err, _req| {
                 error::InternalError::from_response(
                     "",
