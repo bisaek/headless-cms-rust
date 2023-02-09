@@ -2,13 +2,13 @@ use actix_web::{post, web::Json, HttpResponse, Responder};
 use serde::Deserialize;
 
 #[derive(Deserialize)]
-struct Field {
-    fieldType: String,
+pub struct Field {
+    field_type: String,
     name: String,
 }
 
 #[derive(Deserialize)]
-struct PageType {
+pub struct PageType {
     fields: Vec<Field>,
 }
 // impl PageType {
