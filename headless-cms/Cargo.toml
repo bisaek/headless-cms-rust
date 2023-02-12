@@ -12,3 +12,4 @@ serde = {version = "^1", features = ["derive"]}
 diesel = { version = "2.0.0", features = ["postgres"] }
 jsonwebtoken = "8"
 markdown = "1.0.0-alpha.6"
+dotenv = "0.15.0"
