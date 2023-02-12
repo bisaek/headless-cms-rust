@@ -3,8 +3,7 @@
 diesel::table! {
     field_type (id) {
         id -> Int4,
-        #[sql_name = "type"]
-        type_ -> Varchar,
+        f_type -> Varchar,
         name -> Varchar,
         page_type -> Int4,
     }
